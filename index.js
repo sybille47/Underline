@@ -21,79 +21,30 @@ console.log(_.first(['alpha', 'beta', 'gamma', 'next'], 7));
 // Returns an array with the last n elements of an array.
 // If n is not provided it returns an array with just the last element.
 _.last = function (array, n) {
-   if (n == null) {
-    return array[array.length - 1]
-  }
-   else
-    return array.slice(array.length - n);
-};
-console.log(_.last(['alpha', 'beta', 'gamma', 'next'], 3)); // it does not provide the correct result if n > array.length
+}
 
 // _.uniq(array)
 // Produces a duplicate-free version of the array, using === to test equality.
 // In particular only the first occurrence of each value is kept.
 _.uniq = function (array) {
-const uniqueArray = array.filter((value, index, self) => self.indexOf(value) === index)
-return uniqueArray;
-};
-console.log(_.uniq([1, 'a', 'a', 2, 2, 'd', 'd', 7, 8, 7, 'alpha']));
+}
 
 // OBJECTS
 
 // _.extend(destination, source)
 // Copies all the own enumerable properties in the source object over
 // to the destination object, and returns it (without using `Object.assign`).
-
-
-  let object1 = {
-                  key1: 1,
-                  key2: 2,
-                  key3: 3
-                }
-  let object2 = {};
-
 _.extend = function (destination, source) {
 
-  for (let key in source) {
-    if (source.hasOwnProperty(key)) {
-      destination[key] = source[key];
-    }
-  }
-  return destination;
-};
-console.log(_.extend(object2, object1));
+}
 
 // _.defaults(destination, source)
 // Fills in undefined properties in the destination object
 // with own enumerable properties present in the source object,
 // and returns the destination object.
-
-    objectA = {
-                  key1: 1,
-                  key2: 2,
-                  key3: 3
-                }
-    objectB = {
-                  key1: undefined,
-                  key2: 2,
-                  key3: 3
-                };
-
-
 _.defaults = function (destination, source) {
 
 
-  for (let key in source) {
-    if (source.hasOwnProperty(key) && destination[key] === undefined) {
-      destination[key] = source[key];
-    }
-    else {
-      destination[key]
-    }
-  }
-return destination;
-};
-console.log(_.defaults(objectB, objectA));
 
 // COLLECTIONS
 
